@@ -1,7 +1,11 @@
 <!-- load file layout chung -->
 <?php $this->layoutPath = "Layout.php"; ?>
-<div class="col-md-12">    
-    <h2 style="text-align: center">Đơn hàng</h2>
+<div class="col-md-12">
+<div style="display:flex;height: 30px;justify-content: space-between;align-items: center;margin-bottom: 30px;">
+        <div></div>
+        <h2 style="text-align: center">Đơn hàng</h2>
+        <button type="button" class="btn btn-success">Xuất excel</button>
+</div>
     <div class="panel panel-primary">
         <div class="panel-heading">List Orders</div>
         <div class="panel-body">
@@ -9,12 +13,12 @@
                 <tr>
                     <th>Tên</th>
                     <th>Số điện thoại</th>
-                    <th>Ngày đặt</th>                  
+                    <th>Ngày đặt</th>
                     <th style="width:150px; text-align: center;">Trạng thái</th>
                     <th style="width:150px;">Vận chuyển</th>
                 </tr>
                 <?php foreach($listRecord as $rows): ?>
-                <?php   
+                <?php
                     //lay ban ghi customer
                     $customer = $this->modelGetCustomers($rows->customer_id);
                  ?>
@@ -22,10 +26,10 @@
                      <td><?php echo $customer->name; ?></td>
                      <td><?php echo $customer->phone; ?></td>
                      <td>
-                        <?php 
+                        <?php
                         $date = Date_create($rows->create_at);
                         echo Date_format($date, "d/m/Y");
-                        ?>                            
+                        ?>
                         </td>
                      <td style="text-align: center;">
                          <?php if($rows->status == 1): ?>

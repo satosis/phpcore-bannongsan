@@ -8,7 +8,7 @@
   <div class="container">
     <div class="row" >
       <div class="col-xs-12 col-sm-6 col-md-6" > <span><i class="fa fa-phone"></i>0987654321</span> <span><i class="fa fa-envelope-o"></i> <a href="mailto:Tonykieu2k@mail.com">user@gmail.com</a></span> </div>
-      <div class="col-xs-12 col-sm-6 col-md-6 customer"> 
+      <div class="col-xs-12 col-sm-6 col-md-6 customer">
         <?php if(isset($_SESSION["customer_email"]) == false): ?>
         <span><i class="fa fa-user">&nbsp;</i><a href="index.php?controller=account&action=login">Đăng nhập</a></span>&nbsp; &nbsp;<span><i class="fa fa-user-plus"></i>&nbsp;<a href="index.php?controller=account&action=register">Đăng ký</a></span>
         <?php else: ?>
@@ -18,13 +18,13 @@
     </div>
   </div>
 </div>
-<!-- end top header --> 
+<!-- end top header -->
 <!-- middle header -->
 <div class="mid-header">
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-3 logo "> <a href="index.php"> <img src="assets/frontend/100/047/633/themes/517833/assets/1684312014banner-2023.png" alt="User" title="User" class="img-responsive"> </a> </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 header-search"> 
+    <div class="col-xs-12 col-sm-12 col-md-6 header-search">
       <!--<form method="post" id="frm" action="">-->
       <div style="margin-top:25px; position: relative;">
         <input type="text" value="" placeholder="Nhập từ khóa tìm kiếm..." id="key" class="input-control">
@@ -68,9 +68,9 @@
           });
         });
       </script>
-      <!--</form>--> 
+      <!--</form>-->
     </div>
-    <?php 
+    <?php
         $numberProduct = 0;
         if(isset($_SESSION["cart"])){
             foreach($_SESSION["cart"] as $product){
@@ -97,13 +97,14 @@
               <?php endif; ?>
             </ul>
             <?php if($numberProduct > 0): ?>
-            <a href="index.php?controller=cart&action=checkout" class="button">Thanh toán</a><?php endif; ?> </div>
+            <a href="index.php?controller=cart" class="button">Thanh toán</a><?php endif; ?> </div>
+            <!-- <a href="index.php?controller=cart&action=checkout" class="button">Thanh toán</a> </div> -->
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- end middle header --> 
+<!-- end middle header -->
 <!-- bottom header -->
 <div class="bottom-header">
   <div class="container">
@@ -112,13 +113,13 @@
         <li class="active"><a href="index.php">Trang chủ</a></li>
         <li class="has-submenu"> <a href="#"> <span>Sản phẩm</span><i class="fa fa-caret-down" style="margin-left: 5px;"></i> </a>
           <ul class="list-unstyled level1">
-          <?php 
+          <?php
               //load cap 1
               $categories = $this->modelGetCategories();
            ?>
            <?php foreach($categories as $rows): ?>
             <li><a href="index.php?controller=products&action=categories&category_id=<?php echo $rows->id; ?>"><?php echo $rows->name; ?></a></li>
-              <?php 
+              <?php
                 //load cap 2
                 $categoriesSub = $this->modelGetCategoriesSub($rows->id);
              ?>

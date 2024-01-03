@@ -17,14 +17,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                <?php foreach($_SESSION["cart"] as $product): ?>
+                <?php foreach($data as $rows): ?>
+                  <?php
+                        //lay ban ghi product tuong ung voi product_id
+                        $product = $this->modelGetProducts($rows->product_id);
+                     ?>
                   <tr>
-                    <td><img src="assets/upload/products/<?php echo $product['photo']; ?>" class="img-responsive" /></td>
-                    <td><a href="index.php?controller=products&action=detail&id=<?php echo $product['id']; ?>"><?php echo $product['name']; ?></a></td>
-                    <td> <?php echo number_format($product['price']); ?>₫ </td>
-                    <td><input type="number" id="quantity" min="1" class="input-control" value="<?php echo $product['number']; ?>" name="product_<?php echo $product['id']; ?>" required="Không thể để trống"></td>
-                    <td><p><b><?php echo number_format($product['number']*$product['price']); ?>₫</b></p></td>
-                    <td><a href="index.php?controller=cart&action=delete&id=<?php echo $product['id']; ?>" data-id="2479395"><i class="fa fa-trash"></i></a></td>
+                    <td><img src="assets/upload/products/<?php echo $product->photo; ?>" class="img-responsive" /></td>
+                    <td><a href="index.php?controller=products&action=detail&id=<?php echo $product->id; ?>"><?php echo $product->name; ?></a></td>
+                    <td> <?php echo number_format($product->price); ?>₫ </td>
+                    <td> <?php echo number_format($rows->number); ?></td>
+                    <td><p><b><?php echo number_format($rows->number*$product->price); ?>₫</b></p></td>
+                    <td><a href="index.php?controller=cart&action=delete&id=<?php echo $product->id; ?>" data-id="2479395"><i class="fa fa-trash"></i></a></td>
                   </tr>
               	<?php endforeach; ?>
                 </tbody>

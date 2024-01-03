@@ -1,5 +1,5 @@
 <?php
-	trait CartModel{		
+	trait CartModel{
 		public function cartAdd($id){
 		    if(isset($_SESSION['cart'][$id])){
 		        //nếu đã có sp trong giỏ hàng thì số lượng lên 1
@@ -15,7 +15,7 @@
 		        $query->setFetchMode(PDO::FETCH_OBJ);
 		        $product = $query->fetch();
 		        //---
-		        
+
 		        $_SESSION['cart'][$id] = array(
 		            'id' => $id,
 		            'name' => $product->name,
@@ -100,7 +100,26 @@
 			}
 			//xoa gio hang
 			unset($_SESSION["cart"]);
+			return $order_id;
+		}
+
+		public function modelListOrderDetails(){
+			$id = isset($_GET["id"]) ? $_GET["id"] : 0;
+			$conn = Connection::getInstance();
+			$query = $conn->query("select * from orderdetails where order_id = $id");
+			//tra ve mot ban ghi
+			return $query->fetchAll();
+		}
+
+
+		public function modelGetProducts($id){
+			//---
+			$conn = Connection::getInstance();
+			$query = $conn->query("select * from products where id = $id");
+			//tra ve mot ban ghi
+			return $query->fetch();
+			//---
 		}
 		//=============
-	}	
+	}
 ?>

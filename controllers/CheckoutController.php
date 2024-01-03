@@ -1,6 +1,6 @@
 <?php
 	include "models/CartModel.php";
-	class CartController extends Controller{
+	class CheckoutController extends Controller{
 		//ke thua class CartModel
 		use CartModel;
 		//ham tao
@@ -19,8 +19,13 @@
 		}
 		//hien thi gio hang
 		public function index(){
-			$this->loadView("CartView.php");
+			$id = isset($_GET["id"]) ? $_GET["id"] : 0;
+			//goi ham tu model de thuc hien
+			$data = $this->modelListOrderDetails($id);
+			//load view
+			$this->loadView("CheckOutView.php",["data"=>$data,"id"=>$id]);
 		}
+
 
 		//xoa san pham khoi gio hang
 		public function delete(){
@@ -57,8 +62,9 @@
 				header("location:index.php?controller=account&action=login");
 			else{
 				//goi ham cartCheckOut de thanh toan gio hang
-				$id = $this->cartCheckOut();
-				header("location:index.php?controller=checkout&id=$id");
+				$this->cartCheckOut();
+				header("location:index.php?controller=cart");
+				header("location:index.php");
 			}
 		}
 	}
