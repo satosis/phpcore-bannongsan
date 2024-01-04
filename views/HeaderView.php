@@ -27,8 +27,11 @@
     <div class="col-xs-12 col-sm-12 col-md-6 header-search">
       <!--<form method="post" id="frm" action="">-->
       <div style="margin-top:25px; position: relative;">
-        <input type="text" value="" placeholder="Nhập từ khóa tìm kiếm..." id="key" class="input-control">
-        <button style="margin-top:5px;" type="submit"> <i class="fa fa-search" onclick="return search();" style="position: absolute; top: -13px;"></i> </button>
+      <form method="GET">
+        
+        <input type="text" value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''?>" name="search" placeholder="Nhập từ khóa tìm kiếm..." id="key" class="input-control">
+          <button style="margin-top:5px;" type="submit"> <i class="fa fa-search" onclick="return search();" style="position: absolute; top: -13px;"></i> </button>
+          </form>
         <div class="smart-search">
           <ul>
           </ul>

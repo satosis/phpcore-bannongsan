@@ -95,8 +95,17 @@
 			//---
 			//duyet cac ban ghi trong session array de insert vao orderdetails
 			foreach($_SESSION["cart"] as $product){
+				$id = $product["id"];
 				$query = $conn->prepare("insert into orderdetails set order_id=:order_id, product_id=:product_id, price=:price, number=:number");
 				$query->execute(array("order_id"=>$order_id,"product_id"=>$product["id"],"price"=>$product["price"],"number"=>$product["number"]));
+
+				$query1 = $conn->query("select * from products where id = $id");
+				//tra ve mot ban ghi
+				$query1 = $query1->fetch();
+				if (intval($product["number"])) {
+					$count = intval($query1->quantity) - intval($product["number"]);
+					$query2 = $conn->query("update products set quantity = $count where id = $id");
+				}
 			}
 			//xoa gio hang
 			unset($_SESSION["cart"]);

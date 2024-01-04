@@ -47,19 +47,20 @@
 
 			//Tạo tiêu đề cho trang. (có thể không cần)
 
-			$excel->getActiveSheet()->setTitle('demo ghi dữ liệu');
+			$excel->getActiveSheet()->setTitle('Xuất đơn hàng');
 
 			//Xét chiều rộng cho từng, nếu muốn set height thì dùng setRowHeight()
 
-			$excel->getActiveSheet()->getColumnDimension('A')->setWidth(20);
+			$excel->getActiveSheet()->getColumnDimension('A')->setWidth(40);
 
-			$excel->getActiveSheet()->getColumnDimension('B')->setWidth(20);
+			$excel->getActiveSheet()->getColumnDimension('B')->setWidth(40);
 
-			$excel->getActiveSheet()->getColumnDimension('C')->setWidth(30);
+			$excel->getActiveSheet()->getColumnDimension('C')->setWidth(40);
+			$excel->getActiveSheet()->getColumnDimension('D')->setWidth(40);
 
 			//Xét in đậm cho khoảng cột
 
-			$excel->getActiveSheet()->getStyle('A1:C1')->getFont()->setBold(true);
+			$excel->getActiveSheet()->getStyle('A1:D1')->getFont()->setBold(true);
 			$excel->getActiveSheet()->setCellValue('A1', 'Tên');
 
 			$excel->getActiveSheet()->setCellValue('B1', 'Số điện thoại');
@@ -98,12 +99,12 @@
 
 			// ở đây mình lưu file dưới dạng excel2007
 
-			PHPExcel_IOFactory::createWriter($excel, 'Excel2007')->save('data.xlsx');
-
-			header('Content-type: application/vnd.ms-excel');
-
-			header("Content-Disposition: attachment; filename=data.xlsx");
-			PHPExcel_IOFactory::createWriter($excel, 'Excel2007')->save('php://output');
+			ob_clean();
+			header('Content-Type: application/vnd.ms-excel');
+			header("Content-Disposition: attachment;filename=data.xlsx");
+			header('Cache-Control: max-age=0');
+			$objWriter = PHPExcel_IOFactory::createWriter($excel, 'Excel2007');
+			$objWriter->save('php://output');
 
 			//load view
 			header("location:index.php?controller=orders");

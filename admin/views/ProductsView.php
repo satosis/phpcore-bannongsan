@@ -15,6 +15,7 @@
                     <th style="width: 100px;">Ảnh sản phẩm</th>
                     <th>Tên</th>
                     <th style="width:150px;">Danh mục sản phẩm</th>
+                    <th style="width:150px;">Số lượng sản phẩm</th>
                     <th style="width: 70px;">Giá sản phẩm</th>
                     <th style="width: 70px;">Giảm giá</th>
                     <th style="width:70px;">Sản phẩm hot</th>
@@ -29,6 +30,7 @@
                     </td>
                     <td><?php echo $rows->name ?></td>
                     <td><?php echo $this->getCategory($rows->category_id); ?></td>
+                    <td><?php echo $rows->quantity ?></td>
                     <td style="text-align: center;"><?php echo number_format($rows->price); ?></td>
                     <td style="text-align: center;"><?php echo $rows->discount; ?>%</td>
                    <td style="text-align: center;"><?php if($rows->hot==1): ?><span class="fa fa-check"></span><?php endif; ?></td>
