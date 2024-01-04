@@ -4,7 +4,7 @@
 <div style="display:flex;height: 30px;justify-content: space-between;align-items: center;margin-bottom: 30px;">
         <div></div>
         <h2 style="text-align: center">Đơn hàng</h2>
-        <button type="button" class="btn btn-success">Xuất excel</button>
+        <button type="button" class="btn btn-success"><a href="index.php?controller=orders&action=export" style="color:white">Xuất excel</a></button>
 </div>
     <div class="panel panel-primary">
         <div class="panel-heading">List Orders</div>
