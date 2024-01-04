@@ -1,12 +1,17 @@
-<?php 
+<?php
 	$this->layoutPath = "Layout.php";
  ?>
- <div class="col-md-12">  
+ <div class="col-md-12">
     <div class="panel panel-primary">
         <div class="panel-heading">Add edit category</div>
         <div class="panel-body">
         <form method="post" action="<?php echo $action; ?>">
             <!-- rows -->
+            <?php if(!empty($_GET['message'])):?>
+                <div class="alert alert-danger" role="alert">
+                Danh mục sản phẩm đã tồn tại
+                </div>
+            <?php endif ?>
             <div class="row" style="margin-top:5px;">
                 <div class="col-md-2">Name</div>
                 <div class="col-md-10">
@@ -18,7 +23,7 @@
             <div class="row" style="margin-top:5px;">
                 <div class="col-md-2">Parent</div>
                 <div class="col-md-10">
-                    <?php 
+                    <?php
                         $categories = $this->modelListCategories(isset($record->id)?$record->id:0);
                      ?>
                      <select name="parent_id" class="form-control" style="width:250px;">
@@ -29,7 +34,7 @@
                      </select>
                 </div>
             </div>
-            <!-- end rows -->    
+            <!-- end rows -->
             <!-- rows -->
             <div class="row" style="margin-top:5px;">
                 <div class="col-md-2"></div>
@@ -37,7 +42,7 @@
                     <input type="checkbox" <?php if(isset($record->displayhomepage)&&$record->displayhomepage==1): ?> checked <?php endif; ?> name="displayhomepage" id="displayhomepage"><label for="displayhomepage">&nbsp;&nbsp;Hiển thị danh mục này ở trang chủ</label>
                 </div>
             </div>
-            <!-- end rows -->        
+            <!-- end rows -->
             <!-- rows -->
             <div class="row" style="margin-top:5px;">
                 <div class="col-md-2"></div>

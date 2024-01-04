@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Quản trị hệ thống</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -59,13 +59,13 @@
                                 </p>
                             </li>
                             <!-- Menu Footer-->
-                            
+
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            
+
         </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
@@ -107,6 +107,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="index.php?controller=statistic">
+                        <i class="fa fa-th"></i> <span>Doanh thu</span>
+                    </a>
+                </li>
+                <li>
                     <a href="index.php?controller=users">
                         <i class="fa fa-code"></i> <span>Quản lý user</span>
                     </a>
@@ -123,7 +128,7 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        
+
         <!-- Main content -->
         <section class="content">
             <?php echo $this->view; ?>

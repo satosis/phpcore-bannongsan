@@ -1,7 +1,7 @@
-<?php 
+<?php
 	trait CategoriesModel{
 		//lay danh sach cac ban ghi, co phan trang
-		public function modelRead($recordPerPage){			
+		public function modelRead($recordPerPage){
 			//lay bien page truyen tu url
 			$page = isset($_GET["page"])&&is_numeric($_GET["page"])&&$_GET["page"]>0 ? $_GET["page"]-1 : 0;
 			//lay tu ban ghi nao
@@ -49,8 +49,16 @@
 			//update cot name
 			//lay bien ket noi
 			$conn = Connection::getInstance();
-			$query = $conn->prepare("insert into categories set name=:_name,parent_id=:_parent_id,displayhomepage=:_displayhomepage");
-			$query->execute([":_name"=>$name,":_parent_id"=>$parent_id,":_displayhomepage"=>$displayhomepage]);
+			$query1 = $conn->query("select * from categories where name = '$name'");
+			//tra ve mot ban ghi
+			$category = $query1->fetch();
+			if ($category) {
+				header("Location:index.php?controller=categories&action=create&message=exists");
+			} else {
+				$query = $conn->prepare("insert into categories set name=:_name,parent_id=:_parent_id,displayhomepage=:_displayhomepage");
+				$query->execute([":_name"=>$name,":_parent_id"=>$parent_id,":_displayhomepage"=>$displayhomepage]);
+				header("location:index.php?controller=categories");
+			}
 		}
 		//xoa ban ghi
 		public function modelDelete($id){

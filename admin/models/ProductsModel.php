@@ -1,7 +1,7 @@
-<?php 
+<?php
 	trait ProductsModel{
 		//lay danh sach cac ban ghi, co phan trang
-		public function modelRead($recordPerPage){			
+		public function modelRead($recordPerPage){
 			//lay bien page truyen tu url
 			$page = isset($_GET["page"])&&is_numeric($_GET["page"])&&$_GET["page"]>0 ? $_GET["page"]-1 : 0;
 			//lay tu ban ghi nao
@@ -44,6 +44,7 @@
 			$name = $_POST["name"];
 			$description = $_POST["description"];
 			$content = $_POST["content"];
+			$quantity = $_POST["quantity"];
 			$hot = isset($_POST["hot"])?1:0;
 			$price = $_POST["price"];
 			$discount = $_POST["discount"];
@@ -51,8 +52,8 @@
 			//update cot name
 			//lay bien ket noi
 			$conn = Connection::getInstance();
-			$query = $conn->prepare("update products set name=:_name,description=:_description,content=:_content,hot=:_hot,price=:_price,discount=:_discount,category_id=:_category_id where id=:_id");
-			$query->execute([":_name"=>$name,":_description"=>$description,":_content"=>$content,":_hot"=>$hot,":_price"=>$price,":_discount"=>$discount,":_category_id"=>$category_id,":_id"=>$id]);
+			$query = $conn->prepare("update products set name=:_name,description=:_description,content=:_content,hot=:_hot,price=:_price,discount=:_discount,category_id=:_category_id,quantity=:quantity where id=:_id");
+			$query->execute([":_name"=>$name,":_description"=>$description,":_content"=>$content,":_hot"=>$hot,":_price"=>$price,":_discount"=>$discount,":_category_id"=>$category_id,":quantity"=>$quantity,":_id"=>$id]);
 			//---
 			//neu user upload anh thi lay anh cu de xoa, sau do upload anh moi va update database
 			if($_FILES["photo"]["name"] != ""){
@@ -78,6 +79,7 @@
 			$name = $_POST["name"];
 			$description = $_POST["description"];
 			$content = $_POST["content"];
+			$quantity = $_POST["quantity"];
 			$hot = isset($_POST["hot"])?1:0;
 			$photo = "";
 			$price = $_POST["price"];
@@ -85,7 +87,7 @@
 			$category_id = $_POST["category_id"];
 			//---
 			//neu user upload anh thi lay anh cu de xoa, sau do upload anh moi va update database
-			if($_FILES["photo"]["name"] != ""){				
+			if($_FILES["photo"]["name"] != ""){
 				$photo = time()."_".$_FILES["photo"]["name"];
 				//upload anh moi
 				move_uploaded_file($_FILES["photo"]["tmp_name"],"../assets/upload/products/$photo");
@@ -93,8 +95,8 @@
 			//---
 			//lay bien ket noi
 			$conn = Connection::getInstance();
-			$query = $conn->prepare("insert into products set name=:_name,description=:_description,content=:_content,hot=:_hot,photo=:_photo,price=:_price,discount=:_discount,category_id=:_category_id");
-			$query->execute([":_name"=>$name,":_description"=>$description,":_content"=>$content,":_hot"=>$hot,":_photo"=>$photo,":_price"=>$price,":_discount"=>$discount,":_category_id"=>$category_id]);			
+			$query = $conn->prepare("insert into products set name=:_name,description=:_description,content=:_content,hot=:_hot,photo=:_photo,price=:_price,discount=:_discount,category_id=:_category_id,quantity=:_quantity");
+			$query->execute([":_name"=>$name,":_description"=>$description,":_content"=>$content,":_hot"=>$hot,":_photo"=>$photo,":_price"=>$price,":_discount"=>$discount,":_category_id"=>$category_id,":_quantity"=>$quantity]);
 		}
 		//xoa ban ghi
 		public function modelDelete($id){

@@ -1,4 +1,4 @@
-<?php 
+<?php
 	//load file model
 	include "models/CategoriesModel.php";
 	class CategoriesController extends Controller{
@@ -37,13 +37,12 @@
 			//tao bien action de xuat vao thuoc tinh action cua the form
 			$action = "index.php?controller=categories&action=createPost";
 			//goi view
-			$this->loadView("CategoriesForm.php",["action"=>$action]);		
+			$this->loadView("CategoriesForm.php",["action"=>$action]);
 		}
 		//crete POST
 		public function createPost(){
 			$this->modelCreate();
 			//quay tro lai mvc categories
-			header("location:index.php?controller=categories");
 		}
 		//delete
 		public function delete(){

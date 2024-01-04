@@ -13,7 +13,6 @@
                     <th class="price">Giá bán lẻ</th>
                     <th class="quantity">Số lượng</th>
                     <th class="price">Thành tiền</th>
-                    <th>Xóa</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -28,7 +27,6 @@
                     <td> <?php echo number_format($product->price); ?>₫ </td>
                     <td> <?php echo number_format($rows->number); ?></td>
                     <td><p><b><?php echo number_format($rows->number*$product->price); ?>₫</b></p></td>
-                    <td><a href="index.php?controller=cart&action=delete&id=<?php echo $product->id; ?>" data-id="2479395"><i class="fa fa-trash"></i></a></td>
                   </tr>
               	<?php endforeach; ?>
                 </tbody>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 	//load file model
 	include "models/ProductsModel.php";
 	class ProductsController extends Controller{
@@ -37,7 +37,7 @@
 			//tao bien action de xuat vao thuoc tinh action cua the form
 			$action = "index.php?controller=products&action=createPost";
 			//goi view
-			$this->loadView("ProductsForm.php",["action"=>$action]);		
+			$this->loadView("ProductsForm.php",["action"=>$action]);
 		}
 		//crete POST
 		public function createPost(){
@@ -52,5 +52,6 @@
 			//quay tro lai mvc products
 			header("location:index.php?controller=products");
 		}
+
 	}
  ?>

@@ -1,8 +1,8 @@
-<?php 
+<?php
 	trait ProductsModel{
 		//lay danh sach cac ban ghi, co phan trang
-		public function modelRead($recordPerPage){	
-			$category_id = isset($_GET["category_id"])&&is_numeric($_GET["category_id"])?$_GET["category_id"]:0;	
+		public function modelRead($recordPerPage){
+			$category_id = isset($_GET["category_id"])&&is_numeric($_GET["category_id"])?$_GET["category_id"]:0;
 			//lay bien page truyen tu url
 			$page = isset($_GET["page"])&&is_numeric($_GET["page"])&&$_GET["page"]>0 ? $_GET["page"]-1 : 0;
 			//lay tu ban ghi nao
@@ -58,6 +58,18 @@
 			$query = $conn->query("select name from categories where id=$category_id");
 			$record = $query->fetch();
 			return $query->rowCount() > 0 ? $record->name : "";
-		}		
+		}
+
+		public function getSold($id){
+			//lay bien ket noi
+			$conn = Connection::getInstance();
+			$query = $conn->query("select * from orderdetails where product_id=$id");
+			$record = $query->fetch();
+			$total = 0;
+			foreach ($record as $key => $value) {
+				$total += $value->number;
+			}
+			return $total;
+		}
 	}
  ?>

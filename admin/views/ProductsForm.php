@@ -1,8 +1,8 @@
-<?php 
+<?php
     //load file layout.php
     $this->layoutPath = "Layout.php";
- ?>                    
-<div class="col-md-12">  
+ ?>
+<div class="col-md-12">
     <div class="panel panel-primary">
         <div class="panel-heading">Add edit products</div>
         <div class="panel-body">
@@ -23,7 +23,7 @@
                     <input type="text" value="<?php echo isset($record->price)?$record->price:""; ?>" name="price" class="form-control" required>
                 </div>
             </div>
-            <!-- end rows -->  
+            <!-- end rows -->
             <!-- rows -->
             <div class="row" style="margin-top:5px;">
                 <div class="col-md-2">% Discount</div>
@@ -48,7 +48,7 @@
 </select>
                 </div>
             </div>
-            <!-- end rows -->          
+            <!-- end rows -->
             <!-- rows -->
             <div class="row" style="margin-top:5px;">
                 <div class="col-md-2">Descripition</div>
@@ -85,11 +85,18 @@
             <!-- end rows -->
             <!-- rows -->
             <div class="row" style="margin-top:5px;">
+                <div class="col-md-2">Số lượng</div>
+                <div class="col-md-10">
+                    <input type="text" value="<?php echo isset($record->quantity)?$record->quantity:""; ?>" name="quantity" class="form-control" required>
+                </div>
+            </div>
+            <div class="row" style="margin-top:5px;">
                 <div class="col-md-2">Upload image</div>
                 <div class="col-md-10">
                     <input type="file" name="photo">
                 </div>
             </div>
+
             <!-- end rows -->
             <?php if(isset($record->photo)&&file_exists("../assets/upload/products/".$record->photo)): ?>
             <!-- rows -->

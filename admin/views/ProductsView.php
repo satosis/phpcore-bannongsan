@@ -1,4 +1,4 @@
-<?php 
+<?php
     //load file layout.php
     $this->layoutPath = "Layout.php";
  ?>

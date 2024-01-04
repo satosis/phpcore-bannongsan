@@ -1,4 +1,4 @@
-<?php 
+<?php
 	//load LayoutTrangChu.php
 	$this->layoutPath = "LayoutTrangChu.php";
  ?>
@@ -13,14 +13,14 @@
           </div>
           <div class="tabs-content row">
             <div id="content-tabb1" class="content-tab content-tab-proindex" style="display:none">
-              <div class="clearfix"> 
-              	<?php 
+              <div class="clearfix">
+              	<?php
               		$products = $this->modelHotProducts();
                     $now = date("Y-m-d");
               	 ?>
               	 <?php foreach($products as $rows): ?>
-                  <?php 
-                    $createdAt = date( 'Y-m-d', strtotime( $rows->created_at ) );
+                  <?php
+                    $createdAt = date( 'Y-m-d', strtotime($rows->created_at) );
                     $dateDiff = strtotime($now) - strtotime($createdAt);
                     $textYeuThich = 'Yêu thích';
                       if ($dateDiff < 259200) {
@@ -46,9 +46,9 @@
                     </div>
                   </div>
                 </div>
-                <!-- end box product --> 
+                <!-- end box product -->
                 <?php endforeach; ?>
-                
+
               </div>
             </div>
           </div>
@@ -56,7 +56,7 @@
         <div class="row">
           <div class="col-xs-12 col-md-12"> <img src="assets/frontend/images/adv1.jpg" class="img-thumbnail"> </div>
         </div>
-        <?php 
+        <?php
         	$categories = $this->modelGetCategories();
          ?>
          <?php foreach($categories as $rowsCategories): ?>
@@ -71,13 +71,13 @@
             </div>
           </div>
           <div class="tabs-content row">
-            <div id="content-taba4" class="content-tab content-tab-proindex"> 
-              
-              <?php 
+            <div id="content-taba4" class="content-tab content-tab-proindex">
+
+              <?php
               		$products = $this->modelGetProducts($rowsCategories->id);
               	 ?>
               	 <?php foreach($products as $rows): ?>
-                    <?php 
+                    <?php
                     $createdAt = date( 'Y-m-d', strtotime( $rows->created_at ) );
                     $dateDiff = strtotime($now) - strtotime($createdAt);
                     $textYeuThich = 'Yêu thích';
@@ -104,25 +104,25 @@
                     </div>
                   </div>
                 </div>
-                <!-- end box product --> 
+                <!-- end box product -->
                 <?php endforeach; ?>
-               
+
             </div>
           </div>
         </div>
-        <!-- /category product --> 
+        <!-- /category product -->
         <?php endforeach; ?>
-        
+
         <!-- adv -->
         <div class="widebanner"> <a href="#"><img src="assets/frontend/100/047/633/themes/517833/assets/banner.png" alt="#" class="img-responsive"></a> </div>
-        <!-- end adv --> 
-        
+        <!-- end adv -->
+
         <!-- hot news -->
         <div class="home-blog">
           <h2 class="title"> <span>Tin tức</span></h2>
           <div class="row">
-            <div class="owl-home-blog owl-home-blog-bottompage"> 
-            <?php 
+            <div class="owl-home-blog owl-home-blog-bottompage">
+            <?php
             	$hotNews = $this->modelGetHotNews();
              ?>
              <?php foreach($hotNews as $rows): ?>
@@ -135,10 +135,10 @@
                   </div>
                 </div>
               </div>
-              <!-- /news item --> 
-             <?php endforeach; ?> 
-               
-              
+              <!-- /news item -->
+             <?php endforeach; ?>
+
+
             </div>
           </div>
         </div>
