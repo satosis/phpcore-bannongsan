@@ -32,7 +32,7 @@
                   <div style="position: absolute; width: 30px; line-height: 30px; border-radius: 30px; background: black; color:white; text-align: center;"><?php echo $rows->discount; ?>%</div>
                   <div style="position: absolute; width: 70px; line-height: 25px; border-radius: 20px; background: red; color:white; text-align: center; right: 10px;top:60px;"><a href="index.php?controller=wishlist&action=create&id=<?php echo $rows->id; ?>" style="color:white;"><?php echo $textYeuThich; ?></a></div>
                   <div class="product-grid" id="product-1168979" style="height: 350px; overflow: hidden;">
-                    <div class="image"> <a href="#"><img src="assets/upload/products/<?php echo $rows->photo; ?>" title="<?php echo $rows->name; ?>" alt="<?php echo $rows->name; ?>" class="img-responsive"></a> </div>
+                    <div class="image"> <a href="index.php?controller=products&action=detail&id=<?php echo $rows->id; ?>"><img src="assets/upload/products/<?php echo $rows->photo; ?>" title="<?php echo $rows->name; ?>" alt="<?php echo $rows->name; ?>" class="img-responsive"></a> </div>
                     <div class="info">
                       <h3 class="name"><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id; ?>"><?php echo $rows->name; ?></a></h3>
                       <p class="price-box"> <span class="special-price"> <span style="text-decoration:line-through;"> <?php echo number_format($rows->price); ?></span> ₫ </span> </p>
@@ -90,7 +90,7 @@
                 <div style="position: absolute; width: 30px; line-height: 30px; border-radius: 30px; background: black; color:white; text-align: center;"><?php echo $rows->discount; ?>%</div>
                   <div style="position: absolute; width: 70px; line-height: 25px; border-radius: 20px; background: red; color:white; text-align: center; right: 10px;top:60px;"><a href="index.php?controller=wishlist&action=create&id=<?php echo $rows->id; ?>" style="color:white;"><?php echo $textYeuThich; ?></a></div>
                   <div class="product-grid" id="product-1168979" style="height: 350px; overflow: hidden;">
-                    <div class="image"> <a href="#"><img src="assets/upload/products/<?php echo $rows->photo; ?>" title="<?php echo $rows->name; ?>" alt="<?php echo $rows->name; ?>" class="img-responsive"></a> </div>
+                    <div class="image"> <a href="index.php?controller=products&action=detail&id=<?php echo $rows->id; ?>"><img src="assets/upload/products/<?php echo $rows->photo; ?>" title="<?php echo $rows->name; ?>" alt="<?php echo $rows->name; ?>" class="img-responsive"></a> </div>
                     <div class="info">
                       <h3 class="name"><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id; ?>"><?php echo $rows->name; ?></a></h3>
                       <p class="price-box"> <span class="special-price"> <span  style="text-decoration:line-through;"> <?php echo number_format($rows->price); ?></span> ₫ </span> </p>

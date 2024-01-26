@@ -1,11 +1,11 @@
-<?php 
+<?php
 	session_start();
 	//load file Connection.php
-	include "application/Connection.php";	
+	include "application/Connection.php";
 	//load file controller
-	include "application/Controller.php";	
+	include "application/Controller.php";
  ?>
- <?php 
+ <?php
  	$controller = isset($_GET["controller"]) ? $_GET["controller"]:"Home";
  	// //viet hoa chu dau tien
  	// $controller = uncfirst($controller);

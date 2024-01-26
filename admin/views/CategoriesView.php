@@ -1,4 +1,4 @@
-<?php 
+<?php
 	//load file layout.php
 	$this->layoutPath = "Layout.php";
  ?>
@@ -26,7 +26,7 @@
                     </td>
                 </tr>
                         <!-- cap con -->
-                        <?php 
+                        <?php
                             $dataSub = $this->modelListCategoriesSub($rows->id);
                          ?>
                         <?php foreach($dataSub as $rowsSub): ?>

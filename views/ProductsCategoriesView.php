@@ -1,4 +1,4 @@
-<?php 
+<?php
   //load LayoutTrangChu.php
   $this->layoutPath = "LayoutTrangTrong.php";
   $category_id = isset($_GET["category_id"])&&is_numeric($_GET["category_id"])?$_GET["category_id"]:0;
@@ -23,12 +23,12 @@
           </div>
           <div class="tabs-content row">
             <div id="content-tabb1" class="content-tab content-tab-proindex" style="display:none">
-              <div class="clearfix">                 
+              <div class="clearfix">
                  <?php foreach($data as $rows): ?>
                 <!-- box product -->
                 <div class="col-xs-6 col-md-3 col-sm-6 ">
                   <div class="product-grid" id="product-1168979" style="height: 350px; overflow: hidden;">
-                    <div class="image"> <a href="#"><img src="assets/upload/products/<?php echo $rows->photo; ?>" title="<?php echo $rows->name; ?>" alt="<?php echo $rows->name; ?>" class="img-responsive"></a> </div>
+                    <div class="image"> <a href="index.php?controller=products&action=detail&id=<?php echo $rows->id; ?>"><img src="assets/upload/products/<?php echo $rows->photo; ?>" title="<?php echo $rows->name; ?>" alt="<?php echo $rows->name; ?>" class="img-responsive"></a> </div>
                     <div class="info">
                       <h3 class="name"><a href="index.php?controller=products&action=detail&id=<?php echo $rows->id; ?>"><?php echo $rows->name; ?></a></h3>
                       <p class="price-box"> <span class="special-price"> <span class="price product-price" style="text-decoration:line-through;"> <?php echo number_format($rows->price); ?></span> ₫ </span> </p>
@@ -42,8 +42,8 @@
                     </div>
                   </div>
                 </div>
-                <!-- end box product --> 
-                <?php endforeach; ?> 
+                <!-- end box product -->
+                <?php endforeach; ?>
                 <!-- paging -->
                 <div style="clear: both;"></div>
                 <div style="margin-top: -50px;"  class="&#x70;&#x61;&#x67;&#x69;&#x6E;&#x61;&#x74;&#x69;&#x6F;&#x6E;&#x2D;&#x63;&#x6F;&#x6E;&#x74;&#x61;&#x69;&#x6E;&#x65;&#x72;">
@@ -54,7 +54,7 @@
                   <?php endfor; ?>
                   </ul>
                 </div>
-                <!-- end paging --> 
+                <!-- end paging -->
               </div>
             </div>
           </div>

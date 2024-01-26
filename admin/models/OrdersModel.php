@@ -12,7 +12,7 @@
 			$from = $page * $recordPerPage;
 			//thuc hien truy van
 			$conn = Connection::getInstance();
-			$query = $conn->query("select * from orders order by id,status desc limit $from, $recordPerPage");
+			$query = $conn->query("select * from orders order by id desc limit $from, $recordPerPage");
 			//tra ve tat ca cac ban truy van duoc
 			return $query->fetchAll();
 		}

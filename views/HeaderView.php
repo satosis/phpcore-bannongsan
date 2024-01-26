@@ -23,12 +23,12 @@
 <div class="mid-header">
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-3 logo "> <a href="index.php"> <img src="assets/frontend/100/047/633/themes/517833/assets/1684312014banner-2023.png" alt="User" title="User" class="img-responsive"> </a> </div>
+    <div class="col-xs-12 col-sm-12 col-md-3 logo "> <a href="index.php"> <img src="assets/frontend/100/047/633/themes/517833/assets/1684312014banner-2023.png" alt="User" title="User" class="img-responsive" style="height: 60px;width: 110px;object-fit: cover;"> </a> </div>
     <div class="col-xs-12 col-sm-12 col-md-6 header-search">
       <!--<form method="post" id="frm" action="">-->
       <div style="margin-top:25px; position: relative;">
       <form method="GET">
-        
+
         <input type="text" value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''?>" name="search" placeholder="Nhập từ khóa tìm kiếm..." id="key" class="input-control">
           <button style="margin-top:5px;" type="submit"> <i class="fa fa-search" onclick="return search();" style="position: absolute; top: -13px;"></i> </button>
           </form>
