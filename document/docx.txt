@@ -1,0 +1,7 @@
+M setup xong r nhé
+Đây là link user
+http://localhost/bandienmay
+Đây là link admin
+http://localhost/bandienmay/admin
+tk admin: admin@gmail.com \ 123456789
+tk user: user@gmail.com \ 123456789
