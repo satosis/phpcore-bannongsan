@@ -17,11 +17,11 @@ background-image: url(../assets/frontend/images/bglogin.jpg);">
 					<form method="post" action="index.php?controller=login&action=login">
 					<div class="row" style="margin-top:20px;">
 						<div class="col-md-2">Email</div>
-						<div class="col-md-9"><input type="email" name="email" required class="form-control"></div>
+						<div class="col-md-9"><input type="email" name="email" value="admin@gmail.com" required class="form-control"></div>
 					</div>
 					<div class="row" style="margin-top:20px;">
 						<div class="col-md-2">Password</div>
-						<div class="col-md-9"><input type="password" name="password" required class="form-control"></div>
+						<div class="col-md-9"><input type="password" name="password" value="123456789" required class="form-control"></div>
 					</div>
 					<div class="row" style="margin-top:20px;">
 						<div class="col-md-2"></div>

@@ -1,4 +1,4 @@
-<?php 
+<?php
   //load LayoutTrangTrong.php
   $this->layoutPath = "LayoutTrangTrong.php";
  ?>
@@ -17,11 +17,11 @@
                   <p class="title"><span>Đăng nhập tài khoản</span></p>
                   <div class="form-group">
                     <label>Email:<b id="req">*</b></label>
-                    <input type="email" class="input-control" name="email" required="">
+                    <input type="email" class="input-control" name="email" value="user@gmail.com" required="">
                   </div>
                   <div class="form-group">
                     <label>Mật khẩu:<b id="req">*</b></label>
-                    <input type="password" class="input-control" name="password" required="">
+                    <input type="password" class="input-control" name="password" value="123456789" required="">
                   </div>
                   <input type="submit" class="button" value="Đăng nhập">
                 </form>
