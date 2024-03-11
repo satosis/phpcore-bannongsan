@@ -1,10 +1,6 @@
 <header id="header">
 <!-- top header -->
-<div style="width: 100%;display: flex; flex-direction: row; object-fit: cover;">
-<img src="assets/frontend/images/anhheader.png" style="width: 50%; ">
-<img src="assets/frontend/images/anhheader2.png" style="width: 50%;">
-</div>
-<div class="top-header" style="background-color: #e3007b;">
+<div class="top-header" style="background-color: #7cac36;">
   <div class="container">
     <div class="row" >
       <div class="col-xs-12 col-sm-6 col-md-6" > <span><i class="fa fa-phone"></i>0987654321</span> <span><i class="fa fa-envelope-o"></i> <a href="mailto:Tonykieu2k@mail.com">user@gmail.com</a></span> </div>
@@ -23,7 +19,7 @@
 <div class="mid-header">
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-3 logo "> <a href="index.php"> <img src="assets/frontend/100/047/633/themes/517833/assets/1684312014banner-2023.png" alt="User" title="User" class="img-responsive" style="height: 60px;width: 110px;object-fit: cover;"> </a> </div>
+    <div class="col-xs-12 col-sm-12 col-md-3 logo "> <a href="index.php"> <img src="assets/frontend/100/047/633/themes/517833/assets/1684312014banner-2023.png" alt="User" title="User" class="img-responsive" style="height: 60px;width: 110px;object-fit: contain;"> </a> </div>
     <div class="col-xs-12 col-sm-12 col-md-6 header-search">
       <!--<form method="post" id="frm" action="">-->
       <div style="margin-top:25px; position: relative;">
