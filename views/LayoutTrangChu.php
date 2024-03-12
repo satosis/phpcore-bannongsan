@@ -180,10 +180,10 @@ s0.parentNode.insertBefore(s1,s0);
             <h3 style="margin-top: 15px">Theo dõi MediaMart trên</h3>
             <li>
               <a href="https://apps.apple.com/vn/app/mediamartvn/id1572630752" title="MediaMart iOS App"> 
-                <img style="witdh: 45%"  src="https://cdn.mediamart.vn/images/menu/mediamart-ios-app_4b5435b9.png" alt="MediaMart iOS App">
+                <img style="witdh: 45%"  src="assets/frontend/images/ios.png" alt="MediaMart iOS App">
               </a>
               <a href="#" title="MediaMart Android App"> 
-              <img style="witdh: 45%" src="https://cdn.mediamart.vn/images/menu/mediamart-android-app_0f2f434d.png" alt="MediaMart Android App"> 
+              <img style="witdh: 45%" src="assets/frontend/images/chplay.png" alt="MediaMart Android App"> 
               </a>
             </li>
           </ul>
